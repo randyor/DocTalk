@@ -392,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLI-iq-9xk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1193" y="842"/>
+            <point key="canvasLocation" x="-1636" y="196"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="5Kw-ef-K2J">
@@ -440,6 +440,15 @@
                                     <action selector="signinClicked:" destination="1Zp-j2-ZPe" eventType="touchUpInside" id="nxd-CN-spa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRu-rD-JnU">
+                                <rect key="frame" x="31" y="470" width="259" height="30"/>
+                                <state key="normal" title="No Account? Click Here to Sign Up">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="OLC-tc-p3o" kind="modal" identifier="goto_signup" id="xdv-iq-3wG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -460,12 +469,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-1193" y="168"/>
+            <point key="canvasLocation" x="-1636" y="-504"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="FgV-sV-u9s">
             <objects>
-                <viewController id="OLC-tc-p3o" sceneMemberID="viewController">
+                <viewController id="OLC-tc-p3o" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pqm-wi-nJt"/>
                         <viewControllerLayoutGuide type="bottom" id="Lx5-Kx-Mcv"/>
@@ -474,17 +483,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="T0N-5R-Psa">
+                                <rect key="frame" x="75" y="218" width="170" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OLC-tc-p3o" id="WQx-2b-rv3"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zrZ-2m-sgi">
+                                <rect key="frame" x="75" y="256" width="170" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OLC-tc-p3o" id="h8A-sr-8QY"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KhM-fH-f6W">
+                                <rect key="frame" x="75" y="294" width="170" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="OLC-tc-p3o" id="Qge-Qq-N7z"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11h-yr-uEF">
+                                <rect key="frame" x="113" y="349" width="94" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signupClicked:" destination="OLC-tc-p3o" eventType="touchUpInside" id="94I-Wd-HKU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trw-td-XGZ">
+                                <rect key="frame" x="20" y="491" width="280" height="30"/>
+                                <state key="normal" title="Have and Account? Click Here to Login">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="1Zp-j2-ZPe" kind="modal" identifier="goto_login" id="2nJ-T8-boT"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign Up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCa-i8-cgI">
-                                <rect key="frame" x="128" y="64" width="65" height="21"/>
+                                <rect key="frame" x="128" y="98" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="YvN-d5-ChX" appends="YES" id="lkN-8U-v2I"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="txtConfirmPassword" destination="KhM-fH-f6W" id="961-47-Zhu"/>
+                        <outlet property="txtPassword" destination="zrZ-2m-sgi" id="Q1W-sx-QWm"/>
+                        <outlet property="txtUsername" destination="T0N-5R-Psa" id="zsR-sv-sBE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TU8-o6-TTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="YvN-d5-ChX">
+                    <connections>
+                        <action selector="backgroundTap:" destination="OLC-tc-p3o" id="BNO-CL-dSe"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1193" y="-504"/>
         </scene>

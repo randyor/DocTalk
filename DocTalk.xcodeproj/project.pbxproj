@@ -12,6 +12,8 @@
 		7D45E0E01A6EDFAF0022A4AC /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D45E0DE1A6EDFAF0022A4AC /* LoginViewController.xib */; };
 		7D59D7ED1A6EF0BC001E19EF /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D59D7EB1A6EF0BC001E19EF /* HomeViewController.m */; };
 		7D59D7EE1A6EF0BC001E19EF /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D59D7EC1A6EF0BC001E19EF /* HomeViewController.xib */; };
+		7D59D7F21A734A29001E19EF /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D59D7F01A734A29001E19EF /* SignUpViewController.m */; };
+		7D59D7F31A734A29001E19EF /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D59D7F11A734A29001E19EF /* SignUpViewController.xib */; };
 		DC0EE1131A2AF08900DE575A /* ReadMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC0EE1121A2AF08900DE575A /* ReadMessageController.m */; };
 		DCA622851A648AB100830A80 /* chat.sql in Resources */ = {isa = PBXBuildFile; fileRef = DCA622841A648AB100830A80 /* chat.sql */; };
 		DCC2C8B31A29762D00B7A97C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCC2C8B21A29762D00B7A97C /* main.m */; };
@@ -50,6 +52,9 @@
 		7D59D7EA1A6EF0BC001E19EF /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		7D59D7EB1A6EF0BC001E19EF /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		7D59D7EC1A6EF0BC001E19EF /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		7D59D7EF1A734A29001E19EF /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		7D59D7F01A734A29001E19EF /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		7D59D7F11A734A29001E19EF /* SignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		DC0EE1111A2AF08900DE575A /* ReadMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReadMessageController.h; sourceTree = "<group>"; };
 		DC0EE1121A2AF08900DE575A /* ReadMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReadMessageController.m; sourceTree = "<group>"; };
 		DCA622841A648AB100830A80 /* chat.sql */ = {isa = PBXFileReference; lastKnownFileType = file; name = chat.sql; path = DocTalk/chat.sql; sourceTree = "<group>"; };
@@ -149,11 +154,14 @@
 				DF2477171A65B5ED00FBC65E /* StatusViewController.h */,
 				DF2477181A65B5ED00FBC65E /* StatusViewController.m */,
 				DCC2C8BA1A29762D00B7A97C /* Main.storyboard */,
+				7D59D7EF1A734A29001E19EF /* SignUpViewController.h */,
+				7D59D7F01A734A29001E19EF /* SignUpViewController.m */,
 				7D59D7EA1A6EF0BC001E19EF /* HomeViewController.h */,
 				7D59D7EB1A6EF0BC001E19EF /* HomeViewController.m */,
 				7D45E0DC1A6EDFAF0022A4AC /* LoginViewController.h */,
 				7D45E0DD1A6EDFAF0022A4AC /* LoginViewController.m */,
 				DCC2C8BD1A29762D00B7A97C /* Images.xcassets */,
+				7D59D7F11A734A29001E19EF /* SignUpViewController.xib */,
 				7D59D7EC1A6EF0BC001E19EF /* HomeViewController.xib */,
 				DCC2C8BF1A29762D00B7A97C /* LaunchScreen.xib */,
 				7D45E0DE1A6EDFAF0022A4AC /* LoginViewController.xib */,
@@ -273,6 +281,7 @@
 				DCC2C8ED1A29937E00B7A97C /* contact.sql in Resources */,
 				DCA622851A648AB100830A80 /* chat.sql in Resources */,
 				DCC2C8C11A29762D00B7A97C /* LaunchScreen.xib in Resources */,
+				7D59D7F31A734A29001E19EF /* SignUpViewController.xib in Resources */,
 				7D27C52C1A6AE7F60030422F /* jsonlogin.sql in Resources */,
 				7D45E0E01A6EDFAF0022A4AC /* LoginViewController.xib in Resources */,
 				DCC2C8BE1A29762D00B7A97C /* Images.xcassets in Resources */,
@@ -306,6 +315,7 @@
 				DF2477191A65B5ED00FBC65E /* StatusViewController.m in Sources */,
 				DCC2C8B31A29762D00B7A97C /* main.m in Sources */,
 				DCC2C8EB1A29937200B7A97C /* DBManager.m in Sources */,
+				7D59D7F21A734A29001E19EF /* SignUpViewController.m in Sources */,
 				7D59D7ED1A6EF0BC001E19EF /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

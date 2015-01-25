@@ -1,18 +1,18 @@
 //
-//  LoginViewController.m
+//  SignUpViewController.m
 //  DocTalk
 //
-//  Created by Randy Or on 2015-01-20.
+//  Created by Randy Or on 2015-01-23.
 //  Copyright (c) 2015 DocTalk. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "SignUpViewController.h"
 
-@interface LoginViewController ()
+@interface SignUpViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation SignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,20 +34,21 @@
 }
 */
 
-
-- (IBAction)signinClicked:(id)sender {
+- (IBAction)signupClicked:(id)sender {
     NSInteger success = 0;
     @try {
         
         if([[self.txtUsername text] isEqualToString:@""] || [[self.txtPassword text] isEqualToString:@""] ) {
             
-            [self alertStatus:@"Please enter Username and Password" :@"Sign in Failed!" :0];
+            [self alertStatus:@"Please enter Username and Password" :@"Sign up Failed!" :0];
             
+        } else if (![self.txtConfirmPassword.text isEqualToString:self.txtPassword.text]) {
+            [self alertStatus:@"Paswords do no match!" :@"Sign up Failed!" :0];
         } else {
-            NSString *post =[[NSString alloc] initWithFormat:@"username=%@&password=%@",[self.txtUsername text],[self.txtPassword text]];
+            NSString *post =[[NSString alloc] initWithFormat:@"username=%@&password=%@&c_password=%@",[self.txtUsername text],[self.txtPassword text],[self.txtConfirmPassword text]];
             NSLog(@"PostData: %@",post);
             
-            NSURL *url=[NSURL URLWithString:@"http://localhost/jsonlogin2.php"];
+            NSURL *url=[NSURL URLWithString:@"http://localhost/jsonsignup.php"];
             
             NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
             
@@ -85,26 +86,29 @@
                 
                 if(success == 1)
                 {
-                    NSLog(@"Login SUCCESS");
+                    NSLog(@"Sign up SUCCESS");
                 } else {
                     
                     NSString *error_msg = (NSString *) jsonData[@"error_message"];
-                    [self alertStatus:error_msg :@"Sign in Failed!" :0];
+                    [self alertStatus:error_msg :@"Sign up Failed!" :0];
                 }
                 
             } else {
                 //if (error) NSLog(@"Error: %@", error);
-                [self alertStatus:@"Connection Failed" :@"Sign in Failed!" :0];
+                [self alertStatus:@"Connection Failed" :@"Sign up Failed!" :0];
             }
         }
     }
     @catch (NSException * e) {
         NSLog(@"Exception: %@", e);
-        [self alertStatus:@"Sign in Failed." :@"Error!" :0];
+        [self alertStatus:@"Sign Up Failed." :@"Error!" :0];
     }
     if (success) {
-        [self performSegueWithIdentifier:@"login_success" sender:self];
+        //[self performSegueWithIdentifier:@"login_success" sender:self];
+        [self performSegueWithIdentifier:@"goto_login" sender:self];
     }
+    
+    
 }
 
 - (void) alertStatus:(NSString *)msg :(NSString *)title :(int) tag
@@ -119,13 +123,13 @@
 }
 
 - (IBAction)backgroundTap:(id)sender {
-    [self.view endEditing:YES];
+        [self.view endEditing:YES];
 }
+
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     
     return YES;
 }
-
 @end
